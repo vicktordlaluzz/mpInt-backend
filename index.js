@@ -18,14 +18,7 @@ app.use(express.json());
 dbConnection();
 
 // Rutas
-// app.use('/api/usuarios/roles', require('./routes/roles'));
-// app.use('/api/usuarios', require('./routes/usuarios'));
-// app.use('/api/clientes', require('./routes/clientes'));
-// app.use('/api/tramites', require('./routes/tramites'));
-// app.use('/api/documentos', require('./routes/documentos'));
-// app.use('/api/tickets', require('./routes/tickets'));
-// app.use('/api/auth', require('./routes/auth'));
-
+app.use('/api/articulos/', require('./routes/articulos'));
 
 app.listen(process.env.PORT, () => {
     console.log('Servidor corriendo en puerto ' + process.env.PORT);

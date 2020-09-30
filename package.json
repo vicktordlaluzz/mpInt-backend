@@ -1,0 +1,17 @@
+{
+    "name": "mpint-backend",
+    "version": "1.0.0",
+    "description": "backend para realizar pruebas para integrar mercado pago",
+    "main": "index.js",
+    "scripts": {
+        "test": "nodemon start:dev"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^5.10.7",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0"
+    }
+}

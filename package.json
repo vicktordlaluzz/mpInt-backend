@@ -4,7 +4,8 @@
     "description": "backend para realizar pruebas para integrar mercado pago",
     "main": "index.js",
     "scripts": {
-        "test": "nodemon start:dev"
+        "test": "nodemon start:dev",
+        "start": "node index.js"
     },
     "author": "",
     "license": "ISC",

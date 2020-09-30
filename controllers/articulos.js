@@ -1,5 +1,7 @@
 const { response } = require("express");
-const Articulo = require('../models/articulo')
+const Articulo = require('../models/articulo');
+const path = require('path');
+const fs = require('fs');
 
 const getArticulos = async(req, res = response) => {
     try {
@@ -46,8 +48,19 @@ const createArticulo = async(req, res = response) => {
     });
 };
 
+const getImg = async(req, res = response) => {
+    const img = req.params.img;
+
+    let pathImg = path.join(__dirname, `../images/${img}`);
+
+    if (fs.existsSync(pathImg)) {
+        res.sendFile(pathImg);
+    }
+
+}
 module.exports = {
     getArticulos,
     getArticulo,
-    createArticulo
+    createArticulo,
+    getImg
 };

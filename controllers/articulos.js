@@ -20,10 +20,20 @@ const getArticulos = async(req, res = response) => {
 };
 
 const getArticulo = async(req, res = response) => {
-    res.json({
-        ok: true,
-        msg: 'getArticulo endPoint'
-    });
+    try {
+        const artId = req.params.id;
+        const articulo = await Articulo.findById(artId);
+        res.json({
+            ok: true,
+            articulo
+        })
+    } catch (error) {
+        console.log(error);
+        res.json({
+            ok: true,
+            msg: 'Error inesperado contacte al administrador'
+        })
+    }
 };
 
 const createArticulo = async(req, res = response) => {

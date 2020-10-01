@@ -23,7 +23,7 @@ const createPreferencia = async(req, res = response) => {
             "description": "Dispositivo móvil de Tienda e-commerce",
             "category_id": "art",
             "quantity": 1,
-            "unit_price": item.precio
+            "unit_price": req.body.precio
         }],
         "payer": {
             "name": "Lalo",

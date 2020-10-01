@@ -31,7 +31,7 @@ const createPreferencia = async(req, res = response) => {
             "email": "test_user_58295862@testuser.com",
             "phone": {
                 "area_code": "52",
-                "number": "5549737300"
+                "number": 5549737300
             },
             "address": {
                 "street_name": "Insurgentes Sur",
@@ -55,7 +55,7 @@ const createPreferencia = async(req, res = response) => {
             "installments": 6
         },
         "notification_url": "https://www.your-site.com/ipn",
-        "statement_descriptor": "Tienda e-commerce",
+        "statement_descriptor": "TIENDAECOMERSE",
         "external_reference": "vicktordlaluzz@gmail.com"
     };
 

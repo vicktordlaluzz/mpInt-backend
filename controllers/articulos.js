@@ -66,8 +66,8 @@ const getImg = async(req, res = response) => {
     if (fs.existsSync(pathImg)) {
         res.sendFile(pathImg);
     }
+};
 
-}
 module.exports = {
     getArticulos,
     getArticulo,

@@ -19,6 +19,7 @@ dbConnection();
 
 // Rutas
 app.use('/api/articulos/', require('./routes/articulos'));
+app.use('/api/checkout/', require('./routes/checkout'));
 
 app.listen(process.env.PORT, () => {
     console.log('Servidor corriendo en puerto ' + process.env.PORT);

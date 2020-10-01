@@ -12,32 +12,67 @@ mercadopago.configure({
 
 const createPreferencia = async(req, res = response) => {
 
+    //Crea un objeto de preferencia
+    const preference = {
 
-    // Crea un objeto de preferencia
-    // let preference = {
-    //     items: [{
-    //         title: 'Mi producto',
-    //         unit_price: 100,
-    //         quantity: 1,
-    //     }]
-    // };
+        "items": [{
+            "id": "1234",
+            "title": req.body.nombre,
+            "currency_id": "MXN",
+            "picture_url": "https://integracionmp-nodejs.herokuapp.com/api/articulos/imgs/" + req.body.img,
+            "description": "Dispositivo móvil de Tienda e-commerce",
+            "category_id": "art",
+            "quantity": 1,
+            "unit_price": item.precio
+        }],
+        "payer": {
+            "name": "Lalo",
+            "surname": "Landa",
+            "email": "test_user_58295862@testuser.com",
+            "phone": {
+                "area_code": "52",
+                "number": "5549737300"
+            },
+            "address": {
+                "street_name": "Insurgentes Sur",
+                "street_number": 1602,
+                "zip_code": "03940"
+            }
+        },
+        "back_urls": {
+            "success": "https://www.success.com",
+            "failure": "http://www.failure.com",
+            "pending": "http://www.pending.com"
+        },
+        "auto_return": "approved",
+        "payment_methods": {
+            "excluded_payment_methods": [{
+                "id": "amex"
+            }],
+            "excluded_payment_types": [{
+                "id": "atm"
+            }],
+            "installments": 6
+        },
+        "notification_url": "https://www.your-site.com/ipn",
+        "statement_descriptor": "Tienda e-commerce",
+        "external_reference": "vicktordlaluzz@gmail.com"
+    };
 
-    // mercadopago.preferences.create(preference)
-    //     .then(function(response) {
-    //         // Este valor reemplazará el string "<%= global.id %>" en tu HTML
-    //         global.id = response.body.id;
-    //         res.json({
-    //             response
-    //         })
-    //     }).catch(function(error) {
-    //         console.log(error);
-    //     });
-
-    res.json({
-        ok: true,
-        msg: 'preferencia creada',
-        response: req.body
-    })
+    mercadopago.preferences.create(preference)
+        .then(function(response) {
+            // Este valor reemplazará el string "<%= global.id %>" en tu HTML
+            global.id = response.body.id;
+            res.json({
+                response
+            })
+        }).catch(function(error) {
+            console.log(error);
+            res.status(500).json({
+                ok: false,
+                msg: 'Error inesperado administrador'
+            })
+        });
 };
 
 module.exports = {

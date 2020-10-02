@@ -63,12 +63,8 @@ const createPreferencia = async(req, res = response) => {
         .then(function(response) {
             // Este valor reemplazará el string "<%= global.id %>" en tu HTML
             global.id = response.body.id;
-            const preferencia = Preferencia({
-                response
-            });
-            const preferenciadb = preferencia.save();
             res.json({
-                preferenciadb
+                preferencia: response.body
             })
         }).catch(function(error) {
             console.log(error);

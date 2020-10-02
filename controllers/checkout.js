@@ -1,6 +1,7 @@
 const { response } = require('express');
 // SDK de Mercado Pago
 const mercadopago = require('mercadopago');
+const Preferencia = require('../models/preferencia');
 
 // Agrega credenciales
 mercadopago.configure({
@@ -62,8 +63,12 @@ const createPreferencia = async(req, res = response) => {
         .then(function(response) {
             // Este valor reemplazará el string "<%= global.id %>" en tu HTML
             global.id = response.body.id;
-            res.json({
+            const preferencia = Preferencia({
                 response
+            });
+            const preferenciadb = preferencia.save();
+            res.json({
+                preferenciadb
             })
         }).catch(function(error) {
             console.log(error);

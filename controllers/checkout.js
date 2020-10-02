@@ -55,7 +55,6 @@ const createPreferencia = async(req, res = response) => {
             "installments": 6
         },
         "notification_url": "https://www.your-site.com/ipn",
-        "statement_descriptor": "TIENDAECOMERSE",
         "external_reference": "vicktordlaluzz@gmail.com"
     };
 

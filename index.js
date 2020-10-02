@@ -5,9 +5,12 @@ const cors = require('cors');
 
 const { dbConnection } = require('./database/config');
 
+
 // Crear el servidor de express
 const app = express();
 
+
+app.use(allowCrossDomain);
 // Configuracion CORS
 app.use(cors());
 

@@ -5,6 +5,12 @@ const fs = require('fs');
 
 const mercadopago = require('mercadopago');
 
+// Agrega credenciales
+mercadopago.configure({
+    access_token: 'APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181',
+    integrator_id: 'dev_24c65fb163bf11ea96500242ac130004'
+});
+
 const getArticulos = async(req, res = response) => {
     try {
         const articulos = await Articulo.find();
@@ -32,9 +38,9 @@ const getArticulo = async(req, res = response) => {
                 "id": "1234",
                 "title": articulo.nombre,
                 "currency_id": "MXN",
-                "picture_url": "http://localhost:3000/api/articulos/imgs/" + articulo.img,
+                "picture_url": "https://integracionmp-nodejs.herokuapp.com/api/articulos/imgs/" + articulo.img,
                 "description": "Dispositivo móvil de Tienda e-commerce",
-                "category_id": "art",
+                "category_id": "phones",
                 "quantity": 1,
                 "unit_price": articulo.precio
             }],

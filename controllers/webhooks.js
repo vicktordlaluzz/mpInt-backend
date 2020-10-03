@@ -6,6 +6,21 @@ const createNotification = async(req, res = response) => {
         res.status(201).json({
             ok: true
         });
+        switch (req.body.type) {
+            case 'payment':
+                console.log('se recibio notificacion de payment');
+                break;
+            case 'plan':
+                console.log('se recibio notificacion de plan');
+                break;
+            case 'subscription':
+                console.log('se recibio notificacion de suscriocions');
+                break;
+            case 'invoice':
+                console.log('se recibio notificacion de invoice');
+                break;
+
+        }
     } catch (error) {
         console.log(error);
         res.status(500).json({

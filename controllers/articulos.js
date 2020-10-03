@@ -71,7 +71,7 @@ const getArticulo = async(req, res = response) => {
                 }],
                 "installments": 6
             },
-            "notification_url": "https://www.your-site.com/ipn",
+            "notification_url": "https://integracionmp-nodejs.herokuapp.com/api/webhooks",
             "external_reference": "vicktordlaluzz@gmail.com"
         };
 

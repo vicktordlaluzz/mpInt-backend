@@ -7,8 +7,8 @@ const mercadopago = require('mercadopago');
 
 // Agrega credenciales
 mercadopago.configure({
-    access_token: 'APP_USR-1159009372558727-072921-8d0b9980c7494985a5abd19fbe921a3d-617633181',
-    integrator_id: 'dev_24c65fb163bf11ea96500242ac130004'
+    access_token: process.env.MP_ATOKEN,
+    integrator_id: process.env.MP_INT_ID
 });
 
 const getArticulos = async(req, res = response) => {
@@ -67,7 +67,7 @@ const getArticulo = async(req, res = response) => {
                 "failure": "http://localhost:4200/comprar/payment/failure/",
                 "pending": "http://localhost:4200/comprar/payment/pending/"
             },
-            "auto_return": "all",
+            "auto_return": "approved",
             "payment_methods": {
                 "excluded_payment_methods": [{
                     "id": "amex"

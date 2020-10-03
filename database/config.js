@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const dbConnection = async() => {
     try {
-        await mongoose.connect("mongodb+srv://express-api:Z74uIixo2InHYGAY@cluster0.fw57x.mongodb.net/cellphone-shop?retryWrites=true&w=majority", {
+        await mongoose.connect(process.env.DB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true

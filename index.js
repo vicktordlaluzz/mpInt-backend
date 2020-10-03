@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 
 const express = require('express');
 const cors = require('cors');
@@ -18,10 +19,14 @@ app.use(express.json());
 // Base de datos
 dbConnection();
 
+app.use(express.static('public'));
 // Rutas
 app.use('/api/articulos/', require('./routes/articulos'));
 app.use('/api/webhooks/', require('./routes/webhooks'));
-app.use('/api/checkout/', require('./routes/checkout'));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public/index.html'));
+});
 
 app.listen(process.env.PORT, () => {
     console.log('Servidor corriendo en puerto ' + process.env.PORT);

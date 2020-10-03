@@ -67,7 +67,7 @@ const getArticulo = async(req, res = response) => {
                 "failure": "http://localhost:4200/comprar/payment/failure/",
                 "pending": "http://localhost:4200/comprar/payment/pending/"
             },
-            "auto_return": "approved",
+            "auto_return": "all",
             "payment_methods": {
                 "excluded_payment_methods": [{
                     "id": "amex"

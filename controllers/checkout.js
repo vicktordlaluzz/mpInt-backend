@@ -20,7 +20,7 @@ const createPreferencia = async(req, res = response) => {
             "id": "1234",
             "title": req.body.nombre,
             "currency_id": "MXN",
-            "picture_url": "https://integracionmp-nodejs.herokuapp.com/api/articulos/imgs/" + req.body.img,
+            "picture_url": "http://localhost:3000/api/articulos/imgs/" + req.body.img,
             "description": "Dispositivo móvil de Tienda e-commerce",
             "category_id": "art",
             "quantity": 1,

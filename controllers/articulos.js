@@ -32,7 +32,7 @@ const getArticulo = async(req, res = response) => {
                 "id": "1234",
                 "title": articulo.nombre,
                 "currency_id": "MXN",
-                "picture_url": "https://integracionmp-nodejs.herokuapp.com/api/articulos/imgs/" + articulo.img,
+                "picture_url": "http://localhost:3000/api/articulos/imgs/" + articulo.img,
                 "description": "Dispositivo móvil de Tienda e-commerce",
                 "category_id": "art",
                 "quantity": 1,
@@ -52,10 +52,14 @@ const getArticulo = async(req, res = response) => {
                     "zip_code": "03940"
                 }
             },
+            "shipments": {
+                "cost": 150,
+                "mode": "not_specified",
+            },
             "back_urls": {
-                "success": "https://www.success.com",
-                "failure": "http://www.failure.com",
-                "pending": "http://www.pending.com"
+                "success": "http://localhost:4200/comprar/payment/success/",
+                "failure": "http://localhost:4200/comprar/payment/failure/",
+                "pending": "http://localhost:4200/comprar/payment/pending/"
             },
             "auto_return": "approved",
             "payment_methods": {

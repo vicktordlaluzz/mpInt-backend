@@ -59,7 +59,7 @@ const getArticulo = async(req, res = response) => {
                 }
             },
             "shipments": {
-                "cost": 150,
+                "cost": 0,
                 "mode": "not_specified",
             },
             "back_urls": {

@@ -8,7 +8,11 @@ const mercadopago = require('mercadopago');
 // Agrega credenciales
 mercadopago.configure({
     access_token: process.env.MP_ATOKEN,
-    integrator_id: process.env.MP_INT_ID
+    integrator_id: process.env.MP_INT_ID,
+    public_Key: process.env.MP_PK,
+    collector_id: process.env.MP_CI
+
+
 });
 
 const getArticulos = async(req, res = response) => {

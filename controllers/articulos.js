@@ -11,7 +11,6 @@ mercadopago.configure({
     integrator_id: process.env.MP_INT_ID,
     collector_id: process.env.MP_CI
 });
-mercadopago.setPublishableKey(process.env.MP_PK);
 
 const getArticulos = async(req, res = response) => {
     try {

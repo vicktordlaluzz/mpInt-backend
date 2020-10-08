@@ -67,9 +67,9 @@ const getArticulo = async(req, res = response) => {
                 "mode": "not_specified",
             },
             "back_urls": {
-                "success": "https://integracion-mp-node.herokuapp.com/payment/success/",
-                "failure": "https://integracion-mp-node.herokuapp.com/payment/failure/",
-                "pending": "https://integracion-mp-node.herokuapp.com/payment/pending/"
+                "success": "http://localhost:3000/payment/success/",
+                "failure": "http://localhost:3000/payment/failure/",
+                "pending": "http://localhost:3000/payment/pending/"
             },
             "auto_return": "approved",
             "payment_methods": {

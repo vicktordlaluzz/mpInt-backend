@@ -9,11 +9,9 @@ const mercadopago = require('mercadopago');
 mercadopago.configure({
     access_token: process.env.MP_ATOKEN,
     integrator_id: process.env.MP_INT_ID,
-    public_Key: process.env.MP_PK,
     collector_id: process.env.MP_CI
-
-
 });
+mercadopago.setPublishableKey(process.env.MP_PK);
 
 const getArticulos = async(req, res = response) => {
     try {
